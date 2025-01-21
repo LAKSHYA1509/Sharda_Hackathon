@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title data-th-text="${loggedInUser.name}+' |  Avasyu'">Profile Page</title>
+  </head>
+  <body>
+    <div id="content">
+      <!-- sidebar -->
+
+      <!-- user is logged in : sidebar -->
+
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+      <div class="sm:pl-64 pt-20" style="height: 1000px">
+        <div class="flex justify-center flex-col items-center">
+          <h1 class="text-5xl">Welcome to Profile page</h1>
+          <p style="text-align: center;">
+            Emergency preparedness, response, and recovery are key components of the
+            effective management of a disaster.
+            <br>The goal of sankalp is to
+            ensure the safety and security of the public and to protect property and the environment
+            when faced with a disaster. 
+            <br>Sankalp is responsible for coordinating state and local
+            resources to provide rapid and effective assistance to those affected by natural disasters.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("this is profile page");
+    </script>
+  </body>
+</html>
